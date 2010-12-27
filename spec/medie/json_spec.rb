@@ -38,4 +38,18 @@ describe Medie::Json do
     
   end
   
+  context "when marshalling" do
+    
+    it "should return itself if its a string" do
+      result = Medie::Json.new.marshal("guilherme")
+      result.should == "guilherme"
+    end
+    
+    it "should return the unmarshalled json hash enhanced" do
+      result = Medie::Json.new.marshal({"name" => "guilherme"})
+      result.should == {"name" => "guilherme"}.to_json
+    end
+    
+  end
+  
 end
