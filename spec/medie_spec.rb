@@ -27,6 +27,17 @@ describe Medie do
     registry.for("anything").should be_nil
 
   end
+
+  
+  it "should always use the most recent registered handler" do
+
+    handler = Always.new
+    registry = Medie::Registry.new
+    registry.use(Always.new)
+    registry.use(handler)
+    registry.for("anything").should == handler
+    
+  end
   
   
 end
