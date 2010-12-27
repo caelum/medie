@@ -1,7 +1,19 @@
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
-describe "Medie" do
-  it "fails" do
-    fail "hey buddy, you should probably rename this file and start specing for real"
+class Always
+  def can_handle?(response)
+    true
   end
+end
+
+describe Medie do
+  
+  it "should return acceptable registries" do
+
+    always = Always.new
+    registry = Medie::Registry.new.use(always)
+    registry.for("anything").should == always
+    
+  end
+  
 end
