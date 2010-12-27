@@ -37,6 +37,7 @@ task :default => :spec
 require 'rake/rdoctask'
 Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
+  version = "1.0.0.beta3"
 
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title = "medie #{version}"
