@@ -1,3 +1,7 @@
+require 'methodize'
+require 'medie/json/linked_json'
+require 'medie/json/link_collection'
+
 module Medie
   
   # Receives Json representations and turn them into hashes. Turn
@@ -5,10 +9,11 @@ module Medie
   class Json
 
     def unmarshal(content)
-      def content.links
-        []
+      if content.nil?
+        return {}.extend(Methodize).extend(LinkedJson)
       end
-      content
+      
+      ::JSON.parse(content).extend(Methodize).extend(LinkedJson)
     end
 
     def marshal(string, rel)
