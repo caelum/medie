@@ -5,15 +5,28 @@ class Always
     true
   end
 end
+class Never
+  def can_handle?(response)
+    false
+  end
+end
 
 describe Medie do
   
   it "should return acceptable registries" do
 
-    always = Always.new
-    registry = Medie::Registry.new.use(always)
-    registry.for("anything").should == always
+    handler = Always.new
+    registry = Medie::Registry.new.use(handler)
+    registry.for("anything").should == handler
     
   end
+
+  it "should return nil if there is no handler available" do
+
+    registry = Medie::Registry.new.use(Never.new)
+    registry.for("anything").should be_nil
+
+  end
+  
   
 end
