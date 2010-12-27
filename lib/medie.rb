@@ -13,6 +13,7 @@ module Medie
   end
 
   require 'medie/json'
+  require 'medie/xml'
   require 'medie/generic'
   
 end

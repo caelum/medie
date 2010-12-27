@@ -14,3 +14,5 @@ end
 
 gem "methodize"
 gem "json_pure"
+gem "activesupport"
+gem "actionpack", ">= 3.0.0"
