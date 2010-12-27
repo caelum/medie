@@ -11,18 +11,13 @@ require 'rake'
 
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
-  # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "medie"
   gem.homepage = "http://github.com/Guilherme Silveira/medie"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = "A gem that allows you register media types and unmarshal/marshal data accordingly"
+  gem.description = "A gem that allows you register media types and unmarshal/marshal data accordingly"
   gem.email = "guilherme.silveira@caelum.com.br"
   gem.authors = ["Guilherme Silveira"]
-  # Include your dependencies below. Runtime dependencies are required when using your gem,
-  # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
-  #  gem.add_runtime_dependency 'jabber4r', '> 0.1'
-  #  gem.add_development_dependency 'rspec', '> 1.2.3'
 end
 Jeweler::RubygemsDotOrgTasks.new
 
