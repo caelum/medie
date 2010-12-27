@@ -17,6 +17,13 @@ module Medie
     def marshal(string, rel)
       string
     end
+    
+    def can_handle?(media_type)
+      true
+    end
 
   end
+
+  Medie.registry << Generic.new
+  
 end
