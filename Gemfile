@@ -13,3 +13,4 @@ group :development do
 end
 
 gem "methodize"
+gem "json_pure"

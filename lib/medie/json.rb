@@ -1,6 +1,7 @@
 require 'methodize'
 require 'medie/json/linked_json'
 require 'medie/json/link_collection'
+require 'json'
 
 module Medie
   
@@ -16,8 +17,12 @@ module Medie
       ::JSON.parse(content).extend(Methodize).extend(LinkedJson)
     end
 
-    def marshal(string, rel)
-      string
+    def marshal(obj, rel)
+      if obj.kind_of? String
+        obj
+      else
+        obj.to_json
+      end
     end
     
     def can_handle?(content_type)

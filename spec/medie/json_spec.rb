@@ -28,6 +28,14 @@ describe Medie::Json do
       result.should be_kind_of(Medie::LinkedJson)
     end
     
+    it "should return the unmarshalled json hash enhanced" do
+      result = Medie::Json.new.unmarshal({"name" => "guilherme"}.to_json)
+      result.should == {"name" => "guilherme"}
+      result.should be_kind_of(Hash)
+      result.should be_kind_of(Methodize)
+      result.should be_kind_of(Medie::LinkedJson)
+    end
+    
   end
   
 end
