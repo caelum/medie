@@ -1,6 +1,17 @@
 = medie
 
-Description goes here.
+Medie is a simple repository for media type handlers.
+
+Register your own handler and use it as in:
+
+<pre>
+registry = Medie::Registry.new.use(MyHandler.new)
+
+registry.for("anything").marshal some_object
+registry.for("anything").unmarshal "some_content"
+</pre>
+
+Although created to be used with Restfulie, it can be used anywhere else.
 
 == Contributing to medie
  
