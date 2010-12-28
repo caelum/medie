@@ -1,6 +1,6 @@
-require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
+require 'spec_helper'
 
-describe Medie::Xml do
+describe Medie::Xml::Driver do
   
   context "when looking up the handler" do
   
