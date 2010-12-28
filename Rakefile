@@ -18,6 +18,7 @@ Jeweler::Tasks.new do |gem|
   gem.description = "A gem that allows you register media types and unmarshal/marshal data accordingly"
   gem.email = "guilherme.silveira@caelum.com.br"
   gem.authors = ["Guilherme Silveira"]
+  gem.version = "1.0.0.beta3"
 end
 Jeweler::RubygemsDotOrgTasks.new
 
