@@ -12,15 +12,13 @@ describe Medie::OpenSearch::Descriptor do
         <Tags>restbuy</Tags>
         <Contact>admin@restbuy.com</Contact>
         <Url type="application/atom+xml"  template="http://localhost:3000/products?q={searchTerms}&amp;pw={startPage?}&amp;format=atom" />
+        <Url type="application/json"  template="http://localhost:3000/products?q={searchTerms}&amp;pw={startPage?}&amp;format=json" />
       </OpenSearchDescription>'
       @descriptor = Medie::OpenSearch::Driver.unmarshal(xml)
     end
   
     it "should unmarshall opensearch xml descriptions" do
-      @descriptor.urls.size.should == 1
-      @descriptor.use("application/atom+xml").host.should == URI.parse("http://localhost:3000/products")
-      @descriptor.use("application/atom+xml").params_pattern.should == "q={searchTerms}&pw={startPage?}&format=atom"
-      @descriptor.use("application/atom+xml").headers["Accept"].should == "application/atom+xml"
+      @descriptor.urls.size.should == 2
     end
   
   end
