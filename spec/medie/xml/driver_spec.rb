@@ -1,6 +1,6 @@
-require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
+require 'spec_helper'
 
-describe Medie::Xml do
+describe Medie::Xml::Driver do
   
   context "when looking up the handler" do
   
@@ -29,7 +29,8 @@ describe Medie::Xml do
       result.should be_empty
       result.should be_kind_of(Hash)
       result.should be_kind_of(Methodize)
-      result.should be_kind_of(Medie::Xml::Linked)
+      result.should be_kind_of(Medie::Linked)
+      result.links.should be_kind_of(Medie::Xml::Links)
     end
     
     it "should return the unmarshalled Xml hash enhanced" do
@@ -37,7 +38,8 @@ describe Medie::Xml do
       result.should == {"name" => "guilherme"}
       result.should be_kind_of(Hash)
       result.should be_kind_of(Methodize)
-      result.should be_kind_of(Medie::Xml::Linked)
+      result.should be_kind_of(Medie::Linked)
+      result.links.should be_kind_of(Medie::Xml::Links)
     end
     
   end

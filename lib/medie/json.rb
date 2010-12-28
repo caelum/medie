@@ -1,5 +1,5 @@
 require 'methodize'
+require 'medie/linked'
 require 'medie/json/links'
-require 'medie/json/linked'
 require 'medie/json/driver'
 require 'json'
