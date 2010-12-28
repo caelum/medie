@@ -1,9 +1,10 @@
 module Medie
   module Xml
     module Linked
-      def links(*args)
+      def links
         links = fetch("link", [])
-        Media::Xml::Json::Links.new(links)
+        links = [links] unless links.kind_of? Array
+        Links.new(links)
       end
 
       def __normalize__(value)

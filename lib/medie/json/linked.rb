@@ -2,10 +2,9 @@ module Medie
   module Json
     module Linked
       def links
-        some_links = self["link"]
-        return nil unless some_links
-        some_links = [some_links] unless some_links.kind_of? Array
-        Json::Links.new(some_links)
+        links = fetch("link", [])
+        links = [links] unless links.kind_of? Array
+        Links.new(links)
       end
 
       def __normalize__(value)
