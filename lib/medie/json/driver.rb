@@ -6,10 +6,10 @@ module Medie
 
       def unmarshal(content)
         if content.nil?
-          return {}.extend(Methodize).extend(Json::Linked)
+          return {}.extend(Methodize).extend(Linked)
         end
     
-        ::JSON.parse(content).extend(Methodize).extend(Json::Linked)
+        ::JSON.parse(content).extend(Methodize).extend(Linked)
       end
 
       def marshal(obj, rel)

@@ -25,7 +25,7 @@ describe Medie::Json::Driver do
       result.should be_empty
       result.should be_kind_of(Hash)
       result.should be_kind_of(Methodize)
-      result.should be_kind_of(Medie::Json::Linked)
+      result.should be_kind_of(Medie::Linked)
     end
     
     it "should return the unmarshalled json hash enhanced" do
@@ -33,7 +33,7 @@ describe Medie::Json::Driver do
       result.should == {"name" => "guilherme"}
       result.should be_kind_of(Hash)
       result.should be_kind_of(Methodize)
-      result.should be_kind_of(Medie::Json::Linked)
+      result.should be_kind_of(Medie::Linked)
     end
     
   end
