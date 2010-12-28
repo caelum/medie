@@ -26,9 +26,9 @@ module Medie
 
       def can_handle?(content_type)
         !(content_type.nil? ||
-          content_type.split(";")[0]!="application/xml" ||
-          content_type.split(";")[0]!="application/atom+xml" ||
-          content_type.split(";")[0]!="text/xml")
+          (content_type.split(";")[0]!="application/xml" &&
+          content_type.split(";")[0]!="application/atom+xml" &&
+          content_type.split(";")[0]!="text/xml"))
       end
 
       Medie.registry << Driver.new

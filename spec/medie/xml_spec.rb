@@ -6,6 +6,8 @@ describe Medie::Xml do
   
     it "should accept pure application/xml" do
       Medie::Xml::Driver.new.can_handle?("application/xml").should be_true
+      Medie::Xml::Driver.new.can_handle?("application/atom+xml").should be_true
+      Medie::Xml::Driver.new.can_handle?("text/xml").should be_true
     end
 
     it "should not accept anything else" do
@@ -14,6 +16,8 @@ describe Medie::Xml do
 
     it "should accept profiles and options" do
       Medie::Xml::Driver.new.can_handle?("application/xml;profile=client").should be_true
+      Medie::Xml::Driver.new.can_handle?("application/atom+xml;profile=client").should be_true
+      Medie::Xml::Driver.new.can_handle?("text/xml;profile=client").should be_true
     end
 
   end
