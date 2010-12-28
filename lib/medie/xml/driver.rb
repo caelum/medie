@@ -21,7 +21,7 @@ module Medie
         else
           hash = {}
         end
-        hash.extend(Methodize).extend(Medie::Linked).use(Medie::Xml::Links)
+        hash.extend(Methodize).extend(Medie::Linked).use_link_type(Medie::Xml::Links)
       end
 
       def can_handle?(content_type)

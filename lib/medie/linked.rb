@@ -18,7 +18,7 @@ module Medie
       value
     end
 
-    def use(type)
+    def use_link_type(type)
       @type_to_use = type
       self
     end
