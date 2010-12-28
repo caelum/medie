@@ -13,10 +13,10 @@ module Medie
   
       def unmarshal(content)
         if content.nil?
-          return {}.extend(Methodize).extend(Linked)
+          return {}.extend(Methodize).extend(Linked).use(Medie::Json::Links)
         end
     
-        ::JSON.parse(content).extend(Methodize).extend(Linked)
+        ::JSON.parse(content).extend(Methodize).extend(Linked).use(Medie::Json::Links)
       end
 
       def can_handle?(content_type)

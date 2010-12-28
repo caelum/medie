@@ -3,7 +3,7 @@ module Medie
     def links
       links = fetch("link", [])
       links = [links] unless links.kind_of? Array
-      Links.new(links)
+      @type_to_use.new(links)
     end
 
     def __normalize__(value)
@@ -16,6 +16,11 @@ module Medie
         value
       end
       value
+    end
+
+    def use(type)
+      @type_to_use = type
+      self
     end
   end
 end

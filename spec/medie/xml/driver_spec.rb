@@ -25,7 +25,8 @@ describe Medie::Xml::Driver do
       result.should be_empty
       result.should be_kind_of(Hash)
       result.should be_kind_of(Methodize)
-      result.should be_kind_of(Medie::Xml::Linked)
+      result.should be_kind_of(Medie::Linked)
+      result.links.should be_kind_of(Medie::Xml::Links)
     end
     
     it "should return the unmarshalled Xml hash enhanced" do
@@ -33,7 +34,8 @@ describe Medie::Xml::Driver do
       result.should == {"name" => "guilherme"}
       result.should be_kind_of(Hash)
       result.should be_kind_of(Methodize)
-      result.should be_kind_of(Medie::Xml::Linked)
+      result.should be_kind_of(Medie::Linked)
+      result.links.should be_kind_of(Medie::Xml::Links)
     end
     
   end
