@@ -15,5 +15,7 @@ module Medie
   require 'medie/json'
   require 'medie/xml'
   require 'medie/generic'
+  require 'medie/form_url_encoded'
+  require 'medie/open_search'
   
 end
