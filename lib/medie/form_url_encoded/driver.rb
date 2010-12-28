@@ -19,6 +19,8 @@ module Medie
       def can_handle?(content_type)
         !(content_type.nil? || content_type.split(";")[0]!="application/x-www-form-urlencoded")
       end
+
+      Medie.registry << Driver.new
     end
   end
 end

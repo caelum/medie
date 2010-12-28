@@ -11,6 +11,7 @@ module Medie
         !(content_type.nil? || content_type.split(";")[0]!="application/opensearchdescription+xml")
       end
 
+      Medie.registry << Driver.new
     end
   end
 end

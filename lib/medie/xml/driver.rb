@@ -31,6 +31,7 @@ module Medie
           content_type.split(";")[0]!="text/xml")
       end
 
+      Medie.registry << Driver.new
     end
   end
 end
