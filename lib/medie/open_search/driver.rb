@@ -2,7 +2,7 @@ module Medie
   module OpenSearch
     class Driver
 
-      def self.unmarshal(xml)
+      def unmarshal(xml)
         hash = Medie::Xml::Driver.new.unmarshal(xml)
         descriptor = Descriptor.new(hash)
       end

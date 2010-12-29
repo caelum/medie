@@ -1,7 +1,7 @@
 module Medie
   module FormUrlEncoded
     class Driver
-      def self.marshal(content, rel)
+      def marshal(content, rel)
           if content.kind_of? Hash
             content.map { |key, value| "#{key}=#{value}" }.join("&")
           else
@@ -9,7 +9,7 @@ module Medie
           end
       end
   
-      def self.unmarshal(content)
+      def unmarshal(content)
       	def content.links
           []
         end
