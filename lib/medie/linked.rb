@@ -9,7 +9,7 @@ module Medie
     def __normalize__(value)
       case value
       when Hash
-        value.extend(Methodize).extend(Linked)
+        value.extend(Methodize).extend(Linked).use_link_type(@type_to_use)
       when Array
         value.map { |v| __normalize__(v) }
       else

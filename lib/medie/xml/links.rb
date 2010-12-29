@@ -7,7 +7,7 @@ module Medie
         links = [links] unless links.kind_of? Array
         links = [] unless links
         links.each { |l|
-          link = Tokamak::Xml::Link.new(l)
+          link = Medie::Link.new(l)
           @hash[link.rel.to_s] = link
         }
       end
