@@ -12,6 +12,8 @@ module Medie
     @registry ||= Registry.new
   end
 
+  require 'medie/link'
+  require 'medie/linked'
   require 'medie/json'
   require 'medie/xml'
   require 'medie/generic'
