@@ -12,7 +12,7 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   gem.name = "medie"
-  gem.homepage = "http://github.com/Guilherme Silveira/medie"
+  gem.homepage = "http://github.com/caelum/medie"
   gem.license = "MIT"
   gem.summary = "A gem that allows you register media types and unmarshal/marshal data accordingly"
   gem.description = "A gem that allows you register media types and unmarshal/marshal data accordingly"
