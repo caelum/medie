@@ -39,6 +39,7 @@ Gem::Specification.new do |s|
     "lib/medie/xml.rb",
     "lib/medie/xml/driver.rb",
     "lib/medie/xml/links.rb",
+    "medie.gemspec",
     "spec/integration/full_json.js",
     "spec/integration/json_spec.rb",
     "spec/medie/json/driver_spec.rb",
@@ -48,7 +49,7 @@ Gem::Specification.new do |s|
     "spec/medie/xml/driver_spec.rb",
     "spec/spec_helper.rb"
   ]
-  s.homepage = %q{http://github.com/Guilherme Silveira/medie}
+  s.homepage = %q{http://github.com/caelum/medie}
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
