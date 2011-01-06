@@ -12,13 +12,13 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   gem.name = "medie"
-  gem.homepage = "http://github.com/Guilherme Silveira/medie"
+  gem.homepage = "http://github.com/caelum/medie"
   gem.license = "MIT"
   gem.summary = "A gem that allows you register media types and unmarshal/marshal data accordingly"
   gem.description = "A gem that allows you register media types and unmarshal/marshal data accordingly"
   gem.email = "guilherme.silveira@caelum.com.br"
   gem.authors = ["Guilherme Silveira"]
-  gem.version = "1.0.0.beta3"
+  gem.version = "1.0.0.beta4"
 end
 Jeweler::RubygemsDotOrgTasks.new
 
@@ -38,7 +38,7 @@ task :default => :spec
 require 'rake/rdoctask'
 Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
-  version = "1.0.0.beta3"
+  version = "1.0.0.beta4"
 
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title = "medie #{version}"
