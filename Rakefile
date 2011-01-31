@@ -18,7 +18,7 @@ Jeweler::Tasks.new do |gem|
   gem.description = "A gem that allows you register media types and unmarshal/marshal data accordingly"
   gem.email = "guilherme.silveira@caelum.com.br"
   gem.authors = ["Guilherme Silveira"]
-  gem.version = "1.0.0.beta4"
+  gem.version = "1.0.0"
 end
 Jeweler::RubygemsDotOrgTasks.new
 
@@ -38,7 +38,7 @@ task :default => :spec
 require 'rake/rdoctask'
 Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
-  version = "1.0.0.beta4"
+  version = "1.0.0"
 
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title = "medie #{version}"
