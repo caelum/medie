@@ -1,19 +1,6 @@
 require 'bundler'
 Bundler::GemHelper.install_tasks
 
-require 'jeweler'
-Jeweler::Tasks.new do |gem|
-  gem.name = "medie"
-  gem.homepage = "http://github.com/caelum/medie"
-  gem.license = "MIT"
-  gem.summary = "A gem that allows you register media types and unmarshal/marshal data accordingly"
-  gem.description = "A gem that allows you register media types and unmarshal/marshal data accordingly"
-  gem.email = "guilherme.silveira@caelum.com.br"
-  gem.authors = ["Guilherme Silveira"]
-  gem.version = "1.0.0"
-end
-Jeweler::RubygemsDotOrgTasks.new
-
 require 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new(:spec) do |spec|
   spec.pattern = FileList['spec/**/*_spec.rb']
