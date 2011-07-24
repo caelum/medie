@@ -13,7 +13,7 @@ end
 
 task :default => :spec
 
-require 'rake/rdoctask'
+require 'rdoc/task'
 require "medie/version"
 Rake::RDocTask.new do |rdoc|
   version = Medie::VERSION
