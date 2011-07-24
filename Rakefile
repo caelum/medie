@@ -1,28 +1,6 @@
-require 'rubygems'
 require 'bundler'
-begin
-  Bundler.setup(:default, :development)
-rescue Bundler::BundlerError => e
-  $stderr.puts e.message
-  $stderr.puts "Run `bundle install` to install missing gems"
-  exit e.status_code
-end
-require 'rake'
+Bundler::GemHelper.install_tasks
 
-require 'jeweler'
-Jeweler::Tasks.new do |gem|
-  gem.name = "medie"
-  gem.homepage = "http://github.com/caelum/medie"
-  gem.license = "MIT"
-  gem.summary = "A gem that allows you register media types and unmarshal/marshal data accordingly"
-  gem.description = "A gem that allows you register media types and unmarshal/marshal data accordingly"
-  gem.email = "guilherme.silveira@caelum.com.br"
-  gem.authors = ["Guilherme Silveira"]
-  gem.version = "1.0.0"
-end
-Jeweler::RubygemsDotOrgTasks.new
-
-require 'rspec/core'
 require 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new(:spec) do |spec|
   spec.pattern = FileList['spec/**/*_spec.rb']
@@ -35,10 +13,10 @@ end
 
 task :default => :spec
 
-require 'rake/rdoctask'
+require 'rdoc/task'
+require "medie/version"
 Rake::RDocTask.new do |rdoc|
-  version = File.exist?('VERSION') ? File.read('VERSION') : ""
-  version = "1.0.0"
+  version = Medie::VERSION
 
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title = "medie #{version}"
