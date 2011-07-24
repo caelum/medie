@@ -23,5 +23,6 @@ Gem::Specification.new do |s|
   s.add_dependency('methodize')
   s.add_dependency('json_pure')
   s.add_dependency('activesupport')
-  s.add_dependency('actionpack', ">= 3.0.0")
+  s.add_dependency('i18n')
+  s.add_dependency('builder')
 end
