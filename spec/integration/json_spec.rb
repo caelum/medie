@@ -19,6 +19,26 @@ describe Medie::Json do
     end
     
   end
+
+  describe "JSON link handling" do
+
+    it "should be able to treat links as methods" do
+
+      @json.articles.links.search.href.should == "http://search.place.com"
+      @json.articles.links.unknown_rel.should == nil
+      @json.articles.link.first.type.should == "text/json"
+
+    end
+
+    it "should treat links like a map" do
+      @json.articles.links.should respond_to(:[])
+      @json.articles.links["search"].rel.should == "search"
+      @json.articles.links["unknown_rel"].should == nil
+      @json.articles.links.size.should == 2
+      @json.articles.links.keys.should include("search","self")
+    end
+    
+  end
   
   describe "JSON write" do
 
