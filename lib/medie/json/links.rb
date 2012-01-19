@@ -4,7 +4,13 @@ module Medie
     # represents a set of links using json
     class Links
       def initialize(parent_node)
+        #@node = parent_node
+        @hash = {}
         @node = parent_node
+        @node.each do |l|
+          link = Medie::Link.new(l)
+          @hash[link.rel.to_s] = link
+        end
       end
 
       def refresh
@@ -12,14 +18,22 @@ module Medie
       end
 
       def method_missing(symbol, *args, &block)
-        linkset = @node.select {|link| link.rel == symbol.to_s }
-        linkset.map! { |link| Medie::Link.new(link) }
-        unless linkset.empty?
-          linkset.size == 1 ? linkset.first : linkset
-        else
-          nil
-        end
+        raise "Links can not receive arguments" unless args.empty?
+        @hash[symbol.to_s]
       end
+
+      def [](name)
+        @hash[name]
+      end
+
+      def size
+        @hash.size
+      end
+
+      def keys
+        @hash.keys
+      end
+
     end
   end
 end
