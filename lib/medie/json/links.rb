@@ -4,7 +4,6 @@ module Medie
     # represents a set of links using json
     class Links
       def initialize(parent_node)
-        #@node = parent_node
         @hash = {}
         @node = parent_node
         @node.each do |l|
