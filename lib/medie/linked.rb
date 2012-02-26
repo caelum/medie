@@ -1,7 +1,7 @@
 module Medie
   module Linked
     def links
-      links = fetch("link", [])
+      links = fetch("links", [])
       links = [links] unless links.kind_of? Array
       @type_to_use.new(links)
     end
