@@ -20,5 +20,6 @@ module Medie
   require 'medie/open_search'
   require 'medie/json'
   require 'medie/xml'
+  require 'medie/railtie'
   
 end

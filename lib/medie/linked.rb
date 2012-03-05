@@ -1,7 +1,7 @@
 module Medie
   module Linked
     def links
-      links = fetch("links", [])
+      links = fetch(Rails.application.config.medie.links_element_name, [])
       links = [links] unless links.kind_of? Array
       @type_to_use.new(links)
     end
